@@ -2,13 +2,16 @@ Ext.define('Packt.Application', {
     name: 'Packt',
 
     extend: 'Ext.app.Application',
+    
+    requires: [
+        'Packt.view.Login',
+    ],
 
     views: [
-        // TODO: add views here
     ],
 
     controllers: [
-        // TODO: add controllers here
+        'Login'
     ],
 
     stores: [
@@ -32,10 +35,14 @@ Ext.define('Packt.Application', {
 
             splashscreen.next().fadeOut({
                 duration: 1000,
-                remove: true
+                remove: true,
+                listeners: {
+                    afteranimate: function(e1, startTime, eOpts) {
+                        Ext.widget('login');
+                    }
+                }
             });
 
-            console.log('launch');
         });
         task.delay(2000);
     }

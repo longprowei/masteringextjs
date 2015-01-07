@@ -11,7 +11,7 @@ Ext.define('Packt.view.Login', {
     iconCls: 'key',
     title: "Login",
     closeAction: 'hide',
-    closable: false
+    closable: false,
 
     items: [{
         xtype: 'form',
@@ -35,6 +35,24 @@ Ext.define('Packt.view.Login', {
             name: 'password',
             fieldLabel: "Password",
             maxLength: 15
+        }],
+        dockedItems: [{
+            xtype: 'toolbar',
+            dock: 'bottom',
+            items: [{
+                xtype: 'tbfill'
+            }, {
+                xtype: 'button',
+                itemId: 'cancel',
+                iconCls: 'cancel',
+                text: 'Cancel'
+            }, {
+                xtype: 'button',
+                itemId: 'submit',
+                formBind: true,
+                iconCls: 'key-go',
+                text: "submit"
+            }]
         }]
     }]
 });
