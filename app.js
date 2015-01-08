@@ -9,5 +9,6 @@ Ext.application({
 
     extend: 'Packt.Application',
     
-    autoCreateViewport: false
+    autoCreateViewport: false,
+    enableQuickTip: true
 });
